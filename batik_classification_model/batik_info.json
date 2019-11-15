@@ -1,0 +1,15 @@
+{ "batik" : [
+	     {
+	        "id" : 1,
+	     	"nama" : "kawung",
+  	        "deskripsi" : "udah kawung aja",
+	        "asal" : "solo"
+	     },
+	     {
+		"id" : 2,
+	   	"nama" : "Parang Rusak",
+	   	"deskripsi" : "ga ada deskripsi",
+	   	"asal" : "yogyakarta"
+            }
+	    ]
+}
