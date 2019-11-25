@@ -13,11 +13,11 @@ model_applications = 'VGG16'
 
 img_width = 128
 img_height = 128
-train_samples = 100
-validation_samples = 32
+train_samples = 4000
+validation_samples = 100
 epochs = 3
-batch_size = 16
-num_classes = 3
+batch_size = 32
+num_classes = 11
 
 if model_applications == 'VGG16':
 	base_model = applications.vgg16.VGG16(weights = "imagenet", include_top=False, input_shape = (img_width, img_height, 3))
@@ -67,7 +67,6 @@ H = final_model.fit_generator(
 	epochs=epochs)
 
 #Evalution
-
  
 # serialize the model to disk
 print("[INFO] serializing network...")
