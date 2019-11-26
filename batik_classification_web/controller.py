@@ -1,6 +1,7 @@
 from flask import Blueprint,render_template,flash,redirect
 from vendor import batik_classification as bc
-"""An example flask application demonstrating server-sent events."""
+from vendor.batik_classification import BatikClassification
+from config import MODEL_CLASSIFICATION,MODEL_INFO
 
 from hashlib import sha1
 from shutil import rmtree
@@ -15,6 +16,7 @@ from gevent.queue import Empty, Queue
 from gevent.timeout import Timeout
 import flask
 
+BC_Predict = BatikClassification(MODEL_CLASSIFICATION,MODEL_INFO)
 
 DATA_DIR = 'data'
 KEEP_ALIVE_DELAY = 25
@@ -275,7 +277,9 @@ def home():
 """ % (MAX_IMAGES, '\n'.join(images))  # noqa
 
 
-
+k = BC_Predict.predictPath("tes.jpg")
+print(BC_Predict)
+print(BC_Predict.getInfoBatik(k[0]))
 
 WebApp = Blueprint("controller",__name__)
 
