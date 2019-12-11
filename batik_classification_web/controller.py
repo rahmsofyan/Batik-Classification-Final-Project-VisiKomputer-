@@ -13,6 +13,7 @@ batik_name = ['kawung.html', 'megaMendung.html', 'nitikKarawitan.html', 'parang.
 def predict(img):
     img_width, img_height = 128, 128
     x = load_img(img, target_size=(img_width,img_height))
+    x = np.array(x)*(1/255)
     x = img_to_array(x)
     x = x.reshape((1,) + x.shape)
     result = loaded_model.predict(x)
