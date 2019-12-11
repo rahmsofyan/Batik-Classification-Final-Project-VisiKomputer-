@@ -33,7 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
 <center><h1 style="margin-top: 150px; color: #4c4c4c">Sistem Klasifikasi Batik</h1></center>
-<div style="width: 80%;
+<div style="width: 35%;
     margin: 0 auto;
     margin-top: 20px;
     padding: 15px;
@@ -48,7 +48,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<p style="color: #4c4c4c"> file error</p>
 			{% endif %}
 </div>
-=
+
+<div style="width: 35%;
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, .9);
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 15px;
+    border-color: #4c4c4c;"
+    >
+    <center>
+    <center><h1 style=" color: #4c4c4c">Gambar:</h1></center> <br>
+    <img src = "{{url_for('static', filename = filename)}}" width = "100%", height = "100%"></center>
+</div>
 	
 </body>
 <script type="text/javascript">
