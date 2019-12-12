@@ -6,25 +6,24 @@ from keras.layers import Input, Activation, Dense, Conv2D, MaxPooling2D, ZeroPad
 import numpy as np
 from keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 import cv2
+import os
 
 img_width, img_height = 128, 128
+#loaded_model = load_model('model.h5')
+dir_test = './testing/'
+col_batik = [i for i in os.listdir(dir_test)]
+batik_index = ['Batik Kawung','Batik Megamendung','Batik Nitik','Batik Parang','Batik Sido Luhur','Batik Truntum','Batik Udan Liris','Batik Gedok','Batik Ceplok','Batik Tambal']
 
 #image_path = "mendung.jpg"
 #img = image.load_img(image_path, target_size=(img_width, img_height))
 #img = np.expand_dims(img, axis=0)
 
-x = load_img("mendung.jpg", target_size=(img_width,img_height))
-x = img_to_array(x)
-print(x.shape)
-x = x.reshape((1,) + x.shape)
-print(x.shape)
+def predict(filename):
+	x = load_img(filename, target_size=(img_width,img_height))
+	x = img_to_array(x)
+	x = np.array(x)*(1/255)
+	x = x.reshape((1,) + x.shape)
+	result = loaded_model.predict(x)
+	answer = np.argmax(result,-1)
+	return answer[0]
 
-loaded_model = load_model('fixmodel.h5')
-
-result = loaded_model.predict(x)
-#result = result[0]
-
-answer = np.argmax(result,-1)
-print(result.tolist())
-print(answer)
-#print(loaded_model.predict_generator(img,1))

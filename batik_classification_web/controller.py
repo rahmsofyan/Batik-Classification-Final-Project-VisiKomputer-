@@ -6,12 +6,13 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import os
 from werkzeug import secure_filename
 
-loaded_model = load_model("static/model/fixmodel.h5")
+
+loaded_model = load_model("static/model/trust2_model.h5")
 batik_name = ['kawung.html', 'megaMendung.html', 'nitikKarawitan.html', 'parang.html', 'sidoLuhur.html',
               'tuntrum.html', 'udanLiris.html', 'kawung.html', 'ceplok.html', 'tambal.html', 'parang.html']
 
 def predict(img):
-    img_width, img_height = 128, 128
+    img_width, img_height = 224, 224
     x = load_img(img, target_size=(img_width,img_height))
     x = np.array(x)*(1/255)
     x = img_to_array(x)

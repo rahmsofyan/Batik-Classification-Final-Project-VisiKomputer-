@@ -1,5 +1,5 @@
 from flask import Flask
-from controller import WebApp
+from controller_alt import WebApp
 import config
 
 app = Flask(__name__)
