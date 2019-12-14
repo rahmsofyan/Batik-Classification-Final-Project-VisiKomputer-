@@ -21,51 +21,90 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<style>
+    hr { 
+      display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1px;
+      border-color:#6b6b6b;
+    } 
+    </style>	
 </head>
-<body style="background-image: url('{{url_for('static', filename ='img/udanLiris.jpg')}}')">
+<body style="background-image: url('{{url_for('static', filename ='img/kawung.jpg')}}');
+          min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+          min-height: 100vh; /* These two lines are counted as one :-)       */
+          font-size: large;  
+          display: flex;
+          align-items: center;">
+<div class="row" style = "width : 100%">
 
-<div style="width: 35%;
+<div class = "col-sm-5" style="
 	border-radius: 25px;
 	background-color: rgba(255, 255, 255, .9);
-    margin: 0 auto;
+	margin: 0 auto;
     margin-top: 20px;
     padding: 15px;
     border-color: #4c4c4c;"
     >
-    <center>
-    <center><h1 style=" color: #4c4c4c">Gambar:</h1></center> <br>
-    <img src = "{{url_for('static', filename = filename)}}" width = "100%", height = "100%"></center>
-</div>
-
-<div style="width: 35%;
-	border-radius: 25px;
-	background-color: rgba(255, 255, 255, .9);
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 15px;
-    border-color: #4c4c4c;"
-    >
-    <center><h1 style=" color: #4c4c4c">Top 3 Prediksi</h1></center> <br>
+    <center><h1 style=" color: #4c4c4c">Prediksi</h1></center>     
+    <hr>
+    <div class="row">
+        
+        <div class="col-sm-3">
+        <b>1.    {{ predicts[0][0] }}</b>
+        </div>
+        <div class="col-sm-1">
+        <b> : </b>
+        </div>
+        <div class="col-sm-8">
+        <b>{{predicts[0][1] }}</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+        2.    {{ predicts[1][0] }}
+        </div>
+        <div class="col-sm-1">
+        : 
+        </div>
+        <div class="col-sm-8">
+        {{predicts[1][1] }} 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+        3.    {{ predicts[2][0] }}
+        </div>
+        <div class="col-sm-1">
+        : 
+        </div>
+        <div class="col-sm-8">
+        {{predicts[2][1] }} 
+        </div>
+    </div>
+    <hr>
+    <div>
+    <center><img src = "{{url_for('static', filename = filename)}}" width = "80%", height = "80%"></center>
+    </div>
     
-    <h2 style=" color: #4c4c4c">1.{{ predicts[0][0] }}: <br>{{predicts[0][1] }}</h3>
-    <h2 style=" color: #4c4c4c">2.{{ predicts[1][0] }}: <br>{{predicts[1][1] }}</h3>
-    <h2 style=" color: #4c4c4c">3.{{ predicts[2][0] }}: <br>{{predicts[2][1] }}</h3>
-    
 </div>
-	
-<div style="width: 35%;
+<div class = "col-sm-5" style="
 	border-radius: 25px;
 	background-color: rgba(255, 255, 255, .9);
-    margin: 0 auto;
+	margin: 0 auto;
     margin-top: 20px;
     padding: 15px;
     border-color: #4c4c4c;"
     >
-    <center><h1 style=" color: #4c4c4c">Udan Liris</h1></center> <br>
-			<p style="color: #4c4c4c; font-family: 'calibry';">Asal : Kota Surakarta (Solo)<br>
+    <center><h1 style=" color: #4c4c4c">Udan Liris</h1></center> <hr>
+			<p style="color: black; font-family: 'calibry';">Asal : Kota Surakarta (Solo)<br>
 				<br>
 			Deskripsi : <br>
-			<p style="color: #4c4c4c; font-family: 'calibry'; margin-left: 8px">
+			<p style="color: black; font-family: 'calibry'; margin-left: 8px">
 			 Liris atau riris sebenarnya memiliki arti yang sama. Morif batik udan liris ini memiliki bentuk garis miring sejajar, sehingga sering kali di sebut dengan motif batik lereng gunung. Motif batik ini juga sering di artikan sebagai hujan gerimis atau hujan rintik – rintik yang merupakan simbol dari kesuburan, kesejahteraan, dan rahmat dari Tuhan.
 
 			 <br><br>
