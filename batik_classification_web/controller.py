@@ -43,8 +43,5 @@ def process_file():
     #return redirect(url_for(bat_name[ans]))
     return render_template(batik_name[ans], filename = filename)
 
-@WebApp.route("/test")
-def send():
-    return render_template('gedok.html')
 
 
